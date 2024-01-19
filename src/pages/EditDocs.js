@@ -20,7 +20,7 @@ function EditDocs({ database }) {
 
   useEffect(() => {
     const updateDocsData = setTimeout(() => {
-      const document = doc(collectionRef, params.id);
+      const document = doc(collectionRef, params?.id);
       updateDoc(document, {
         docsDesc: docsDesc,
       })
@@ -31,10 +31,10 @@ function EditDocs({ database }) {
   }, [docsDesc, collectionRef, params]);
 
   const getData = () => {
-    const document = doc(collectionRef, params.id);
+    const document = doc(collectionRef, params?.id);
     onSnapshot(document, (docs) => {
-      setDocumentTitle(docs.data().title)
-      setDocsDesc(docs.data().docsDesc);
+      setDocumentTitle(docs.data()?.title)
+      setDocsDesc(docs.data()?.docsDesc);
     });
   };
 

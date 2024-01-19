@@ -16,9 +16,14 @@ const style = {
   p: 4,
 };
 
-function ModalComp({title,setTitle,addData,handleClose,handleOpen,open}) {
-
-
+function ModalComp({
+  title,
+  setTitle,
+  addData,
+  handleClose,
+  handleOpen,
+  open,
+}) {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -37,11 +42,17 @@ function ModalComp({title,setTitle,addData,handleClose,handleOpen,open}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <TextField label="Add title" type="text" style={{ width: "100%",marginBottom:"20px" }} onChange={(e)=>setTitle(e.target.value)} value={title} />
-          <div style={{display:"flex",justifyContent:"center"}}>
-              <Button variant="contained" color="warning" onClick={addData}>
-                Add
-              </Button>
+          <TextField
+            label="Add title"
+            type="text"
+            style={{ width: "100%", marginBottom: "20px" }}
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+          />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button variant="contained" color="warning" onClick={addData}>
+              Add
+            </Button>
           </div>
         </Box>
       </Modal>
